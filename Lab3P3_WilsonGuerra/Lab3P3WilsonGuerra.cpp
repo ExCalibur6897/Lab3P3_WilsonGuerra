@@ -1,6 +1,46 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
+
+char** Llenar_Matriz(int filas, int columnas) {
+	char** matriz = new char* [filas];
+	for (int i = 0; i < filas; i++) {
+		matriz[i] = new char[columnas];
+		for (int j = 0; j < columnas; j++) {
+			matriz[i][j] = '-';
+		}
+	}
+	return matriz;
+}
+
+int posicion_random(int n) {
+	return rand() % n;
+}
+
+void agregar_obstaculos(char** matriz, int obstaculos, int filas, int columnas) {
+	int obstaculos_insertados = 0;
+	while (obstaculos_insertados < obstaculos) {
+		int fila = posicion_random(filas);
+		int columna = posicion_random(columnas);
+		if (matriz[fila][columna] == '-') {
+			matriz[fila][columna] = '#';
+			obstaculos_insertados++;
+		}
+	}
+}
+
+void imprimir_matriz(char** matriz, int filas, int columnas) {
+	for (int i = 0; i < filas; i++) {
+		cout << "| ";
+		for (int j = 0; j < columnas; j++) {
+			cout << " '" << matriz[i][j] <<"' ";
+		}
+		cout << " |";
+		cout << endl;
+	}
+}
 
 int main() {
 	int opcion = 0;
@@ -140,6 +180,20 @@ int main() {
 			break;
 		}
 		case 2: {
+			cout << "Matriz con Obstaculos";
+			srand(time(NULL));
+			int filas, columnas, obstaculos;
+			cout << "Ingrese la cantidad de filas (>= 5): ";
+			cin >> filas;
+			cout << "Ingrese la cantidad de columnas (>= 5): ";
+			cin >> columnas;
+			cout << "Ingrese la cantidad de obstaculos (>= 1 y < " << filas * columnas << "): ";
+			cin >> obstaculos;
+			char** matriz = Llenar_Matriz(filas, columnas);
+			agregar_obstaculos(matriz, obstaculos, filas, columnas);
+			imprimir_matriz(matriz, filas, columnas);
+			system("pause");
+			system("cls");
 			break;
 		}
 		case 3: {
