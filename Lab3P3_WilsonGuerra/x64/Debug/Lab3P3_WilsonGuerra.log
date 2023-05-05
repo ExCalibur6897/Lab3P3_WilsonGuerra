@@ -1,5 +1,2 @@
 ﻿  Lab3P3WilsonGuerra.cpp
-C:\Users\excal\source\repos\Lab3P3_WilsonGuerra\Lab3P3_WilsonGuerra\Lab3P3WilsonGuerra.cpp(8,6): warning C4101: 'XOR': unreferenced local variable
-C:\Users\excal\source\repos\Lab3P3_WilsonGuerra\Lab3P3_WilsonGuerra\Lab3P3WilsonGuerra.cpp(10,6): warning C4101: 'disco2': unreferenced local variable
-C:\Users\excal\source\repos\Lab3P3_WilsonGuerra\Lab3P3_WilsonGuerra\Lab3P3WilsonGuerra.cpp(9,6): warning C4101: 'disco1': unreferenced local variable
   Lab3P3_WilsonGuerra.vcxproj -> C:\Users\excal\source\repos\Lab3P3_WilsonGuerra\x64\Debug\Lab3P3_WilsonGuerra.exe
